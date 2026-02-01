@@ -11,5 +11,12 @@ The final result can be found at "PracticaFinal" folder.
 
 Below are some scrrenshots of the mockup:
 
+![index](index.png)
+*Index Layout*
 
+![how](how.png)
+*How Layout*
+
+![contact](contact.png)
+*Contact Layout*
 
