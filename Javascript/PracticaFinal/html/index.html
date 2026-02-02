@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Aquest lloc es un Pokedex creat per AxelSan">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    <!-- Login Section. Se muestra cuando no hay usuario logeado-->
+    <section id="login-section" class="hidden">
+        <div id="login">
+        <div id="login_img">
+            <img src="../img/pokedex-uoc.png">
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-buttons">
+            <button type="submit" id="loginButton">Aceptar</button>
+            <button type="button" id="newUser">Nuevo usuario</button>
+            </div>
+        </form>
+    </div>
+    </section>
+
+    <!--Navbar. Se muestra  solo cuando HAY usuario logeado -->
+    <header class="hidden">
+        <nav id="mainMenu" class="navbar">    
+        </nav>
+    </header>
+
+    <!-- Index Section. Se muestra  solo cuando HAY usuario logeado-->
+    <section id="index-section" class="hidden">
+
+    <div id="loader"></div>
+
+    <div class="top-container">
+        <div class="search-section">
+            <form id="search-form" novalidate>
+            <div class="search-left">
+                    <div class="input-group">
+                        <label for="searchInput" style="width:100%">Nombre o numero</label>
+                        <input type="text" id="searchInput" placeholder="Ej: Pikachu o 025">
+                    </div>
+                    
+                    <div class="weight-controls">
+                        <div class="input-group">
+                            <label for="weightMin">Peso mínimo</label>
+                            <input type="number" id="weightMin" min="0" placeholder="0">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="weightMax">Peso máximo</label>
+                            <input type="number" id="weightMax" min="0" placeholder="1000">
+                        </div>
+                    </div>
+            </div>
+            <div class="search-center">
+                    <div class="button-group">
+                        <button type="submit" id="searchButton"><i class="fa-solid fa-filter icon-stroke"></i></button>
+                        <button id="resetFilters" class="reset-btn"><i class="fa-solid fa-filter-circle-xmark icon-stroke"></i></button>
+                    </div>
+            </div>
+            </form>
+            <div class="search-right">
+                    <h2>Filtros</h2>
+                    <ul id="typeList">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="results-container">
+        <div class="bottom-search">
+                <ul id="typeList" class="type-list">
+                    <li data-type="grass">Grass</li>
+                    <li data-type="poison">Poison</li>
+                    <li data-type="fire">Fire</li>
+                    <li data-type="flying">Flying</li>
+                    <li data-type="water">Water</li>
+                    <li data-type="bug">Bug</li>
+                    <li data-type="normal">Normal</li>
+                    <li data-type="electric">Electric</li>
+                    <li data-type="ground">Ground</li>
+                    <li data-type="fairy">Fairy</li>
+                    <li data-type="fighting">Fighting</li>
+                    <li data-type="psychic">Psychic</li>
+                    <li data-type="rock">Rock</li>
+                    <li data-type="steel">Steel</li>
+                    <li data-type="ice">Ice</li>
+                    <li data-type="ghost">Ghost</li>
+                    <li data-type="dragon">Dragon</li>
+                </ul>
+               </div>
+               <div class="sort-section">
+                <div class="sort-select">
+                    <label for="orden">Ordenar por:</label>
+                    <select id="orden">
+                        <option value="idAsc">Número ↑</option>
+                        <option value="idDesc">Número ↓</option>
+                        <option value="nameAsc">Nombre A-Z</option>
+                        <option value="nameDesc">Nombre Z-A</option>
+                    </select>
+                </div>
+                <div class="results-select">
+                    <span id="resultsInfo">Mostrando 0 de 151</span>
+                    <label for="pageSizeSelect"></label>
+                    <select id="pageSizeSelect">
+                        <option value="12" selected>12</option>
+                        <option value="24">24</option>
+                        <option value="48">48</option>
+                        <option value="96">96</option>
+                        <option value="151">Todos</option>
+                    </select>
+                </div>
+                </div>
+            <div id="resultados" class="pokemon-container"></div>    
+    </div>  
+
+    <button id="loadMore">Cargar más Pokemons</button>
+    </section>
+
+    <script src="../js/clases.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/aux.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/pokemons.js"></script>
+</body>
+</html>
