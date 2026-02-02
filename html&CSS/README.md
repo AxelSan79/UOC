@@ -17,9 +17,13 @@ Below are some screenshots of the mockup:
 
 #### *Index Layout*
 
+
+
 ![how](how.png)
 
 #### *How Layout*
+
+
 
 ![contact](contact.png)
 
